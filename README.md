@@ -1,5 +1,5 @@
 # JsonDb
-_CRUD(Creat, Read, Update, Delete) File json use Easy way!_
+_CRUD(Create, Read, Update, Delete) File json use Easy way!_
 
 ___
 
