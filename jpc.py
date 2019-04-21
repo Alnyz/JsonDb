@@ -18,7 +18,7 @@ class Jpc:
 
 	def add(self, key: str, data: Any) -> bool:
 		r = self.reads
-		if key in r.keys():
+		if self.is_exist(key):
 			raise Exception("Duplicate key, {} key already exist!".format(key))
 		json.dump({key:data}, open(self.files, "w"), indent=4)
 
@@ -32,14 +32,14 @@ class Jpc:
 
 	def delete(self, key: str) -> bool:
 		r = self.reads
-		if key not in r.keys():
+		if not self.is_exist(key):
 			raise AttributeError("key {} not found in data".format(key))
 		del r[key]
 		json.dump(r, open(self.files, "w"), indent=4)
 
 	def update(self, key:str, data: Any) -> bool:
 		r = self.reads
-		if key not in r.keys() and r != {}:
+		if not self.is_exist(key) and r != {}:
 			raise AttributeError("key {} not found in data".format(key))
 		if r == {}:
 			r.update({key:data})
