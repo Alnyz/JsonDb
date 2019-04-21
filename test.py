@@ -7,6 +7,6 @@ data = {
 }
 jp = Jpc(_file) #call Class
 read = jp.reads #see data from json File
-						#you can specifct, data using dot or subscribed
-						#e.g read.hello
+		#you can specifct, data using dot or subscribed
+		#e.g read.hello
 print(read)
